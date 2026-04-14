@@ -27,7 +27,7 @@ const HomePage = () => {
                 {
                     friends.map((friend) => (
 
-                        <div  key={friend.id} className='mt-5 flex items-center'>
+                        <div key={friend.id} className='mt-5 flex items-center'>
 
                             <div className='p-6 bg-white rounded-md shadow-sm text-center w-full space-y-2'>
 
@@ -39,15 +39,23 @@ const HomePage = () => {
                                 <p className='text-[12px] text-[#64748B]'>{friend.days_since_contact}d ago</p>
 
                                 <div className='space-y-4'>
-                                    <div><span className='uppercase font-semibold bg-[#CBFADB] px-3 py-1.5 rounded-full'>{friend.tags[0]}</span></div>
 
-                                <div><span className={`font-semibold px-3 py-1.5 rounded-full ${
-                                    friend.status === 'Almost Due' ? 'bg-[#EFAD44] text-white' :
-                                    friend.status === 'Overdue' ? 'bg-[#EF4444] text-white' :
-                                    friend.status === 'On Track' ? 'bg-[#244D3F] text-white' : ''
-                                    }`}>
-                                    {friend.status}
-                                </span></div>
+                                    <div>
+                                        {
+                                            friend.tags.map((tag, index) => (
+                                                <span key={index} className='uppercase font-semibold bg-[#CBFADB] px-3 py-1.5 rounded-full mx-1'>
+                                                    {tag}
+                                                </span>
+                                            ))
+                                        }
+                                    </div>
+
+                                    <div><span className={`font-semibold px-3 py-1.5 rounded-full ${friend.status === 'Almost Due' ? 'bg-[#EFAD44] text-white' :
+                                        friend.status === 'Overdue' ? 'bg-[#EF4444] text-white' :
+                                            friend.status === 'On Track' ? 'bg-[#244D3F] text-white' : ''
+                                        }`}>
+                                        {friend.status}
+                                    </span></div>
                                 </div>
 
 
