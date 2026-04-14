@@ -27,7 +27,7 @@ const HomePage = () => {
                 {
                     friends.map((friend) => (
 
-                        <div key={friend.id} className='mt-5 flex items-center'>
+                        <div  key={friend.id} className='mt-5 flex items-center'>
 
                             <div className='p-6 bg-white rounded-md shadow-sm text-center w-full space-y-2'>
 

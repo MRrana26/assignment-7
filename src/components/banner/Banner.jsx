@@ -32,7 +32,7 @@ const Banner = () => {
                 </div>
             </div>
 
-            <hr className='mt-10 mb-10 opacity-30'/>
+            <hr className='mt-10 mb-10 opacity-20'/>
 
         </div>
     );
