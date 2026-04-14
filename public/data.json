@@ -1,0 +1,122 @@
+[
+  {
+    "id": 1,
+    "name": "Masudur Rahman",
+    "email": "hafezmasudranamn@gmail.com",
+    "picture": "../src/assets/images/masud.jpg",
+    "days_since_contact": 5,
+    "status": "Almost Due",
+    "tags": ["work"],
+    "bio": "Senior frontend developer. We discuss React and Next.js trends.",
+    "goal": 14,
+    "next_due_date": "2026-04-20"
+  },
+  {
+    "id": 2,
+    "name": "Aminul Islam",
+    "email": "aminul2017@gmail.com",
+    "picture": "../src/assets/images/aminf.png",
+    "days_since_contact": 18,
+    "status": "Overdue",
+    "tags": ["family"],
+    "bio": "Expert in UI/UX. We met during a design workshop in 2024.",
+    "goal": 10,
+    "next_due_date": "2026-04-10"
+  },
+  {
+    "id": 3,
+    "name": "Romjan Ali",
+    "email": "romjanali2024@gmail.com",
+    "picture": "../src/assets/images/romjan.jpg",
+    "days_since_contact": 2,
+    "status": "Overdue",
+    "tags": ["work"],
+    "bio": "Fitness enthusiast. We usually meet at the gym every morning.",
+    "goal": 7,
+    "next_due_date": "2026-04-19"
+  },
+  {
+    "id": 4,
+    "name": "Al Amin Sujon",
+    "email": "sujon1258@gmail.com",
+    "picture": "../src/assets/images/sujon.jpg",
+    "days_since_contact": 35,
+    "status": "Overdue",
+    "tags": ["hobby", "travel"],
+    "bio": "Very supportive cousin. Lives in Mymensingh.",
+    "goal": 30,
+    "next_due_date": "2026-03-15"
+  },
+  {
+    "id": 5,
+    "name": "Abu Hanif",
+    "email": "hanif2020@gmail.com",
+    "picture": "../src/assets/images/hanif.jpg",
+    "days_since_contact": 12,
+    "status": "Overdue",
+    "tags": ["work"],
+    "bio": "Met in university. Passionate about backend architecture.",
+    "goal": 10,
+    "next_due_date": "2026-04-12"
+  },
+  {
+    "id": 6,
+    "name": "Tufajjol Hossain",
+    "email": "tufajjolhossain@gmail.com",
+    "picture": "../src/assets/images/tufajjol.jpg",
+    "days_since_contact": 3,
+    "status": "On Track",
+    "tags": ["work"],
+    "bio": "Co-teacher at the academy. Expert in English language.",
+    "goal": 14,
+    "next_due_date": "2026-04-25"
+  },
+  {
+    "id": 7,
+    "name": "Shofiqul Islam",
+    "email": "shofiqulislam2019@gmail.com",
+    "picture": "../src/assets/images/shofiq.jpg",
+    "days_since_contact": 40,
+    "status": "On Track",
+    "tags": ["family"],
+    "bio": "High school best friend. We haven't talked in a while.",
+    "goal": 20,
+    "next_due_date": "2026-03-20"
+  },
+  {
+    "id": 8,
+    "name": "Jubayer Ahmad",
+    "email": "jubayerahmad2026@gmail.com",
+    "picture": "../src/assets/images/jubayer.jpg",
+    "days_since_contact": 9,
+    "status": "Almost Due",
+    "tags": ["work"],
+    "bio": "Brilliant graphic designer. Helped me with the branding project.",
+    "goal": 15,
+    "next_due_date": "2026-04-22"
+  },
+  {
+    "id": 9,
+    "name": "Rejaul Karim",
+    "email": "rejaulkarim2018@gmail.com",
+    "picture": "../src/assets/images/reju.jpg",
+    "days_since_contact": 25,
+    "status": "Almost Due",
+    "tags": ["family"],
+    "bio": "Active member of Ettehad. Always ready to help others.",
+    "goal": 15,
+    "next_due_date": "2026-04-05"
+  },
+  {
+    "id": 10,
+    "name": "Alamin",
+    "email": "alamin2020@gmail.com",
+    "picture": "../src/assets/images/alamin.jpeg",
+    "days_since_contact": 1,
+    "status": "On Track",
+    "tags": ["hobby", "travel"],
+    "bio": "Love exploring food spots in Dhaka. Met at a tech meetup.",
+    "goal": 20,
+    "next_due_date": "2026-05-01"
+  }
+]
