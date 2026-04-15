@@ -19,6 +19,7 @@ const FriendDetail = () => {
     }, []);
 
     const expectFriend = friends.find((frnd) => String(frnd.id) === id);
+    
 
     return (
         <>

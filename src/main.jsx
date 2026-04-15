@@ -7,8 +7,9 @@ import Dashboard from './components/dashboard/Dashboard'
 import Navbar from './components/shared/Navbar'
 import PageNotFound from './pages/pageNotFound/PageNotFound'
 import Footer from './components/shared/Footer'
-import TimeLine from './components/timeLine/TimeLine'
+
 import FriendDetail from './pages/friendDetails/FriendDetail'
+import TimeLine from './components/timeLine/TimeLine'
 
 
 const router = createBrowserRouter([
