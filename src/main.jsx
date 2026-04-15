@@ -7,6 +7,9 @@ import Dashboard from './components/dashboard/Dashboard'
 import Navbar from './components/shared/Navbar'
 import PageNotFound from './pages/pageNotFound/PageNotFound'
 import Footer from './components/shared/Footer'
+import TimeLine from './components/timeLine/TimeLine'
+import FriendDetail from './pages/friendDetails/FriendDetail'
+
 
 const router = createBrowserRouter([
   {
@@ -17,6 +20,14 @@ const router = createBrowserRouter([
         index: true,
         element: <Dashboard />
       },
+      {
+        path: 'timeline',
+        element: <TimeLine />
+      },
+      {
+        path: 'friend/:id',
+        element: <FriendDetail />
+      }
       
     ],
     errorElement: <div>
