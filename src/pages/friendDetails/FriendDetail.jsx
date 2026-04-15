@@ -31,7 +31,7 @@ const FriendDetail = () => {
                 expectFriend && (
                     <div className='w-10/12 mx-auto my-20'>
 
-                        <div className='flex gap-5 rounded-md'>
+                        <div className='flex flex-col lg:flex-row gap-5 rounded-md'>
 
                             <div className='flex-1'>
                                 <div className='bg-white shadow-sm rounded-md p-6 space-y-2 text-center'>
@@ -74,7 +74,7 @@ const FriendDetail = () => {
 
 
                             <div className='text-center space-y-1 flex-2 rounded-md'>
-                                <div className='grid grid-cols-3 gap-5'>
+                                <div className='grid lg:grid-cols-3 gap-5'>
                                     <div className='py-8 px-3.5 bg-white rounded-md space-y-4'>
                                         <h1 className='text-[#244D3F] font-semibold text-3xl'>{expectFriend.days_since_contact}</h1>
                                         <p className='text-[18px] text-[#64748B]'>Days Since Contact</p>
@@ -109,8 +109,8 @@ const FriendDetail = () => {
                                 </div>
 
                                 <div className='bg-white p-6 mt-4 rounded-md'>
-                                    <h1 className='text-xl font-medium text-[#244D3F]'>Lorem ipsum dolor sit amet.</h1>
-                                    <div className='grid grid-cols-3 gap-5 mt-5'>
+                                    <h1 className='text-xl font-medium text-[#244D3F]'>Quick Check-In</h1>
+                                    <div className='grid lg:grid-cols-3 gap-5 mt-5'>
                                         <div className='p-5 bg-[#F8FAFC] rounded-md cursor-pointer flex flex-col items-center justify-center text-center space-y-3 transition-all active:scale-95'>
                                             <TbPhoneCall />
                                             <h1>Call</h1>
