@@ -23,7 +23,7 @@ const Navbar = () => {
                         ><RiHome2Line /> Home </NavLink>
 
                         <NavLink
-                            to={'/timeLinePage'}
+                            to={'/timeLineHistory'}
                             className={({ isActive }) => `flex items-center gap-2 px-4 py-2 rounded-md font-medium transition-all ${isActive ? 'bg-[#244D3F] text-white' : ''}`}
                         ><RiTimeLine /> Timeline </NavLink>
 
@@ -47,7 +47,7 @@ const Navbar = () => {
                             ><RiHome2Line /> Home </NavLink>
 
                             <NavLink
-                                to={'/timeline'}
+                                to={'/timeLineHistory'}
                                 className={({ isActive }) => `flex items-center gap-2 px-4 py-2 rounded-md font-medium transition-all ${isActive ? 'bg-[#244D3F] text-white' : ''}`}
                             ><RiTimeLine /> Timeline </NavLink>
 

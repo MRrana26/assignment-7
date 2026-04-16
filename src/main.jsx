@@ -8,14 +8,15 @@ import Navbar from './components/shared/Navbar'
 import PageNotFound from './pages/pageNotFound/PageNotFound'
 import Footer from './components/shared/Footer'
 import FriendDetail from './pages/friendDetails/FriendDetail'
-import TimeLinePage from './components/timeLinePage/TimeLinePage'
-
+import Stats from './components/stats/Stats'
+import TimeLineHistory from './components/timeLineHistory/TimeLineHistory'
+import CallFriendProvider from './context/CallFriendContext'
 
 
 const router = createBrowserRouter([
   {
     path: '/',
-    element: <Roots/>,
+    element: <Roots />,
     children: [
       {
         index: true,
@@ -26,10 +27,14 @@ const router = createBrowserRouter([
         element: <FriendDetail />
       },
       {
-        path: 'timeLinePage',
-        element: <TimeLinePage />
+        path: 'stats',
+        element: <Stats />
+      },
+      {
+        path: 'timeLineHistory',
+        element: <TimeLineHistory />
       }
-      
+
     ],
     errorElement: <div>
       <Navbar />
@@ -42,6 +47,8 @@ const router = createBrowserRouter([
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <RouterProvider router={router}></RouterProvider>
+    <CallFriendProvider>
+      <RouterProvider router={router}></RouterProvider>
+    </CallFriendProvider>
   </StrictMode>,
 )

@@ -1,10 +1,12 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { HiBellSnooze } from 'react-icons/hi2';
 import { LuArchive, LuVideo } from 'react-icons/lu';
 import { RiDeleteBin6Line, RiMessage2Line } from 'react-icons/ri';
 import { TbPhoneCall } from 'react-icons/tb';
 import { useParams } from 'react-router';
 import { HashLoader } from 'react-spinners';
+import { CallFriendContext } from '../../context/CallContext';
+import { toast } from 'react-toastify';
 
 const FriendDetail = () => {
     const { id } = useParams();
@@ -23,6 +25,39 @@ const FriendDetail = () => {
     }, []);
 
     const expectFriend = friends.find((frnd) => String(frnd.id) === id);
+
+
+    const { callFriends, setCallFriends } = useContext(CallFriendContext);
+
+    const handleCallFriend = () => {
+        const currentTime = new Date().toLocaleString('en-US', {
+            month: 'long',
+            day: 'numeric',
+            year: 'numeric',
+        });
+        setCallFriends([...callFriends, { ...expectFriend, type: 'Call', time: currentTime }]);
+        toast.success(`Call to ${expectFriend.name}`);
+    };
+    const handleTextFriend = () => {
+        const currentTime = new Date().toLocaleString('en-US', {
+            month: 'long',
+            day: 'numeric',
+            year: 'numeric',
+        });
+        setCallFriends([...callFriends, { ...expectFriend, type: 'Text', time: currentTime }]);
+        toast.success(`Message sent to ${expectFriend.name}`);
+
+    };
+    const handleVideoFriend = () => {
+        const currentTime = new Date().toLocaleString('en-US', {
+            month: 'long',
+            day: 'numeric',
+            year: 'numeric',
+        });
+        setCallFriends([...callFriends, { ...expectFriend, type: 'Video', time: currentTime }]);
+        toast.success(`Video call with ${expectFriend.name}`);
+
+    };
 
 
     return (
@@ -111,17 +146,17 @@ const FriendDetail = () => {
                                 <div className='bg-white p-6 mt-4 rounded-md'>
                                     <h1 className='text-xl font-medium text-[#244D3F]'>Quick Check-In</h1>
                                     <div className='grid lg:grid-cols-3 gap-5 mt-5'>
-                                        <div className='p-5 bg-[#F8FAFC] rounded-md cursor-pointer flex flex-col items-center justify-center text-center space-y-3 transition-all active:scale-95'>
+                                        <div onClick={handleCallFriend} className='p-5 bg-[#F8FAFC] rounded-md cursor-pointer flex flex-col items-center justify-center text-center space-y-3 transition-all active:scale-95'>
                                             <TbPhoneCall />
                                             <h1>Call</h1>
                                         </div>
 
-                                        <div className='p-5 bg-[#F8FAFC] rounded-md cursor-pointer flex flex-col items-center justify-center text-center space-y-3 transition-all active:scale-95'>
+                                        <div onClick={handleTextFriend} className='p-5 bg-[#F8FAFC] rounded-md cursor-pointer flex flex-col items-center justify-center text-center space-y-3 transition-all active:scale-95'>
                                             <RiMessage2Line />
                                             <h1>Text</h1>
                                         </div>
 
-                                        <div className='p-5 bg-[#F8FAFC] rounded-md cursor-pointer flex flex-col items-center justify-center text-center space-y-3 active:scale-95 transition-all'>
+                                        <div onClick={handleVideoFriend} className='p-5 bg-[#F8FAFC] rounded-md cursor-pointer flex flex-col items-center justify-center text-center space-y-3 active:scale-95 transition-all'>
                                             <LuVideo />
                                             <h1>Video</h1>
                                         </div>

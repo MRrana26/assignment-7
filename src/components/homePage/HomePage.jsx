@@ -33,8 +33,8 @@ const HomePage = () => {
                     {
                         friends.map((friend) => (
 
-                            <Link to={`/friend/${friend.id}`}>
-                                <div key={friend.id} className='mt-5 flex items-center'>
+                            <Link to={`/friend/${friend.id}`} key={friend.id}>
+                                <div className='mt-5 flex items-center'>
 
                                     <div className='p-6 bg-white rounded-md shadow-sm text-center w-full space-y-2'>
 
