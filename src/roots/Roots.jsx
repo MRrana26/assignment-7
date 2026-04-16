@@ -11,7 +11,9 @@ const Roots = () => {
         <Outlet />
         <Footer />
 
-        <ToastContainer />
+        <ToastContainer 
+        position='top-center'
+        />
         </>
     );
 };

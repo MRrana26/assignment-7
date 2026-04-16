@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { CallFriendContext } from '../../context/CallContext';
 import { MdKeyboardArrowDown } from 'react-icons/md';
 
@@ -7,22 +7,25 @@ import { MdKeyboardArrowDown } from 'react-icons/md';
 const TimeLineHistory = () => {
 
 
-    const { callFriends, setCallFriends } = useContext(CallFriendContext);
-    console.log(callFriends, setCallFriends);
+    const { callFriends } = useContext(CallFriendContext);
+    const [filter, setFilter] = useState('All');
+
+    const filterData = filter === 'All' ? callFriends : callFriends.filter((flt) => flt.type === filter);
 
     return (
         <div className='w-10/12 mx-auto py-10 space-y-5'>
             <h1 className='text-5xl font-bold text-[#1F2937]'>Timeline</h1>
             <div className="dropdown dropdown-start">
-                <div tabIndex={0} role="button" className="btn m-1 text-[#64748B] w-85 bg-white shadow-sm flex justify-between">Filter timeline <MdKeyboardArrowDown /></div>
+                <div tabIndex={0} role="button" className="btn m-1 text-[#64748B] w-45 lg:w-85 bg-white shadow-sm flex justify-between">Filter timeline <MdKeyboardArrowDown /></div>
                 <ul tabIndex="-1" className="dropdown-content menu bg-base-100 rounded-box z-1 w-52 p-2 shadow-sm">
-                    <li><a className='mt-2 shadow'>Call</a></li>
-                    <li><a className='mt-2 shadow'>Text</a></li>
-                    <li><a className='mt-2 shadow'>Video</a></li>
+                    <li><a onClick={()=> setFilter('All')} className='mt-2 shadow'>All</a></li>
+                    <li><a onClick={()=> setFilter('Call')} className='mt-2 shadow'>Call</a></li>
+                    <li><a onClick={()=> setFilter('Text')} className='mt-2 shadow'>Text</a></li>
+                    <li><a onClick={()=> setFilter('Video')} className='mt-2 shadow'>Video</a></li>
                 </ul>
             </div>
             {
-                callFriends.map((friend, index) => (
+                filterData.map((friend, index) => (
                     <div key={index} className='flex bg-white p-5 rounded-xl gap-5 my-2 shadow-md'>
 
                         <div>
