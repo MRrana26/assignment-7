@@ -1,6 +1,7 @@
 import React, { useContext, useState } from 'react';
 import { CallFriendContext } from '../../context/CallContext';
 import { MdKeyboardArrowDown } from 'react-icons/md';
+import { LuDatabaseBackup } from 'react-icons/lu';
 
 
 
@@ -9,8 +10,11 @@ const TimeLineHistory = () => {
 
     const { callFriends } = useContext(CallFriendContext);
     const [filter, setFilter] = useState('All');
+    
 
     const filterData = filter === 'All' ? callFriends : callFriends.filter((flt) => flt.type === filter);
+
+    const count = filterData.length;
 
     return (
         <div className='w-10/12 mx-auto py-10 space-y-5'>
@@ -24,7 +28,10 @@ const TimeLineHistory = () => {
                     <li><a onClick={()=> setFilter('Video')} className='mt-2 shadow'>Video</a></li>
                 </ul>
             </div>
-            {
+            
+
+            {count !== 0 ? <div>
+                {
                 filterData.map((friend, index) => (
                     <div key={index} className='flex bg-white p-5 rounded-xl gap-5 my-2 shadow-md'>
 
@@ -42,6 +49,7 @@ const TimeLineHistory = () => {
                     </div>
                 ))
             }
+            </div> : <h1 className='flex items-center justify-center gap-3 py-20 font-medium text-gray-700 text-2xl'>No Data Found <LuDatabaseBackup /></h1>}
 
         </div>
     );
